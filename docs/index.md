@@ -56,7 +56,7 @@ Contributions welcome!
 
 ---
 
-<img src="/assets/pango.png" alt="mr. pango" width="320px">  
+<img src="./assets/pango.png" alt="mr. pango" width="320px">  
 
 <small>
 Mr. Pango, the mascot for Pangolier; wielding his sword, the "Swashbuckle".<br/>
