@@ -1,0 +1,25 @@
+test: should remove completed items when clicked
+---
+- loadUrl: https://demo.playwright.dev/todomvc
+- clickOn: "[placeholder='What needs to be done?']"
+- type: buy some cheese
+- pressKey: Enter
+- clickOn: "[placeholder='What needs to be done?']"
+- type: feed the cat
+- pressKey: Enter
+- clickOn: "[placeholder='What needs to be done?']"
+- type: book a doctors appointment
+- pressKey: Enter
+- clickOn: "$todo-item [type='checkbox']"
+- clickOn: 
+    text: Clear completed
+- assertExist:
+    selector: $todo-item
+    count: 2
+- assertExist: 
+    selector: $todo-item
+    text: buy some cheese
+- assertExist: 
+    selector: $todo-item
+    index: 1
+    text: feed the cat

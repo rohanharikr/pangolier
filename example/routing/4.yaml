@@ -1,0 +1,24 @@
+test: should allow me to display all items
+---
+- loadUrl: https://demo.playwright.dev/todomvc
+- clickOn: "[placeholder='What needs to be done?']"
+- type: buy some cheese
+- pressKey: Enter
+- clickOn: "[placeholder='What needs to be done?']"
+- type: feed the cat
+- pressKey: Enter
+- clickOn: "[placeholder='What needs to be done?']"
+- type: book a doctors appointment
+- pressKey: Enter
+- clickOn: 
+    selector: .todo-list li .toggle
+    index: 1
+- clickOn: 
+    text: Active
+- clickOn: 
+    text: Completed
+- clickOn: 
+    text: All
+- assertExist:
+    selector: $todo-item
+    length: 3

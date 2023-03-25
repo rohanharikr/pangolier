@@ -1,0 +1,17 @@
+test: should be hidden when there are no items that are completed
+---
+- loadUrl: https://demo.playwright.dev/todomvc
+- clickOn: "[placeholder='What needs to be done?']"
+- type: buy some cheese
+- pressKey: Enter
+- clickOn: "[placeholder='What needs to be done?']"
+- type: feed the cat
+- pressKey: Enter
+- clickOn: "[placeholder='What needs to be done?']"
+- type: book a doctors appointment
+- pressKey: Enter
+- clickOn: .todo-list li .toggle
+- clickOn:
+    text: Clear completed
+- assertNotVisible:
+    text: Clear completed

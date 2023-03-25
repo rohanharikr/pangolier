@@ -1,0 +1,24 @@
+test: should allow me to clear the complete state of all items
+---
+- loadUrl: https://demo.playwright.dev/todomvc
+- clickOn: "[placeholder='What needs to be done?']"
+- type: buy some cheese
+- pressKey: Enter
+- clickOn: "[placeholder='What needs to be done?']"
+- type: feed the cat
+- pressKey: Enter
+- clickOn: "[placeholder='What needs to be done?']"
+- type: book a doctors appointment
+- pressKey: Enter
+- clickOn:
+    selector: .toggle-all
+    times: 2
+- assertNotExist:
+    selector: $todo-item .completed
+    index: 0
+- assertNotExist:
+    selector: $todo-item .completed
+    index: 1
+- assertNotExist:
+    selector: $todo-item .completed
+    index: 2

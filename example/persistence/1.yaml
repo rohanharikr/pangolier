@@ -1,0 +1,39 @@
+test: should persist its data
+---
+- loadUrl: https://demo.playwright.dev/todomvc
+- clickOn: "[placeholder='What needs to be done?']"
+- type: buy some cheese
+- pressKey: Enter
+- clickOn: "[placeholder='What needs to be done?']"
+- type: feed the cat
+- pressKey: Enter
+- clickOn: "$todo-item [type='checkbox']"
+- assertExist:
+    selector: $todo-item
+    index: 0
+    text: buy some cheese
+- assertExist:
+    selector: $todo-item
+    index: 1
+    text: feed the cat
+- assertExist:
+    selector: $todo-item.completed
+    index: 0
+- assertNotExist:
+    selector: $todo-item.completed
+    index: 1
+- reload
+- assertExist:
+    selector: $todo-item
+    index: 0
+    text: buy some cheese
+- assertExist:
+    selector: $todo-item
+    index: 1
+    text: feed the cat
+- assertExist:
+    selector: $todo-item.completed
+    index: 0
+- assertNotExist:
+    selector: $todo-item.completed
+    index: 1

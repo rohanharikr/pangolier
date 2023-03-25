@@ -1,0 +1,8 @@
+test: "Should show #main and #footer when items added"
+---
+- loadUrl: https://demo.playwright.dev/todomvc
+- clickOn: "[placeholder='What needs to be done?']"
+- type: buy some cheese
+- pressKey: Enter
+- assertVisible: .main
+- assertVisible: .footer

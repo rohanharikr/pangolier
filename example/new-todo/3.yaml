@@ -1,0 +1,26 @@
+test: Should append new items to the bottom of the list
+---
+- loadUrl: https://demo.playwright.dev/todomvc
+- clickOn: "[placeholder='What needs to be done?']"
+- type: buy some cheese
+- pressKey: Enter
+- clickOn: "[placeholder='What needs to be done?']"
+- type: feed the cat
+- pressKey: Enter
+- clickOn: "[placeholder='What needs to be done?']"
+- type: book a doctors appointment
+- pressKey: Enter
+- assertVisible:
+    text: 3 items left
+- assertVisible:
+    selector: $todo-item
+    index: 0
+    text: buy some cheese
+- assertVisible:
+    selector: $todo-item
+    index: 1
+    text: feed the cat
+- assertVisible:
+    selector: $todo-item
+    index: 2
+    text: book a doctors appointment

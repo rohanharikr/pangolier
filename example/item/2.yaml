@@ -1,0 +1,19 @@
+test: should allow me to un-mark items as complete
+---
+- loadUrl: https://demo.playwright.dev/todomvc
+- clickOn: "[placeholder='What needs to be done?']"
+- type: buy some cheese
+- pressKey: Enter
+- clickOn: "[placeholder='What needs to be done?']"
+- type: feed the cat
+- pressKey: Enter
+- clickOn: "$todo-item [type='checkbox']"
+- assertExist: $todo-item.completed
+- assertNotExist:
+    selector: $todo-item.completed
+    index: 1
+- clickOn: "$todo-item [type='checkbox']"
+- assertNotExist: $todo-item.completed
+- assertNotExist:
+    selector: $todo-item.completed
+    index: 1

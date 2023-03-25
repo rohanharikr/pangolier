@@ -1,0 +1,20 @@
+test: should allow me to add todo items
+---
+- loadUrl: https://demo.playwright.dev/todomvc
+- clickOn: "[placeholder='What needs to be done?']"
+- type: buy some cheese
+- pressKey: Enter
+- assertVisible:
+    selector: $todo-title
+    text: buy some cheese
+- clickOn: "[placeholder='What needs to be done?']"
+- type: feed the cat
+- pressKey: Enter
+- assertVisible:
+    selector: $todo-title
+    index: 0
+    text: buy some cheese
+- assertVisible:
+    selector: $todo-title
+    index: 1
+    text: feed the cat

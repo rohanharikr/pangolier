@@ -1,0 +1,22 @@
+test: should hide other controls when editing
+---
+- loadUrl: https://demo.playwright.dev/todomvc
+- clickOn: "[placeholder='What needs to be done?']"
+- type: buy some cheese
+- pressKey: Enter
+- clickOn: "[placeholder='What needs to be done?']"
+- type: feed the cat
+- pressKey: Enter
+- clickOn: "[placeholder='What needs to be done?']"
+- type: book a doctors appointment
+- pressKey: Enter
+- clickOn: 
+    selector: $todo-item
+    index: 1
+    times: 2
+- assertNotVisible:
+    index: 1
+    selector: "$todo-item [type='checkbox']"
+- assertVisible: 
+    selector: "$todo-item label"
+    text: feed the cat

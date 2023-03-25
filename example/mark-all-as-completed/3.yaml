@@ -1,0 +1,25 @@
+test: complete all checkbox should update state when items are completed / cleared
+---
+- loadUrl: https://demo.playwright.dev/todomvc
+- clickOn: "[placeholder='What needs to be done?']"
+- type: buy some cheese
+- pressKey: Enter
+- clickOn: "[placeholder='What needs to be done?']"
+- type: feed the cat
+- pressKey: Enter
+- clickOn: "[placeholder='What needs to be done?']"
+- type: book a doctors appointment
+- pressKey: Enter
+- clickOn: .toggle-all
+- assertExist: 
+    selector: .toggle-all
+    enabled: false
+- clickOn: $todo-item
+- assertExist: 
+    selector: $todo-item
+    enabled: false
+- clickOn: $todo-item
+- assertExist: 
+    selector: $todo-item
+    enabled: true
+

@@ -1,0 +1,34 @@
+test: should allow me to edit an item
+---
+- loadUrl: https://demo.playwright.dev/todomvc
+- clickOn: "[placeholder='What needs to be done?']"
+- type: buy some cheese
+- pressKey: Enter
+- clickOn: "[placeholder='What needs to be done?']"
+- type: feed the cat
+- pressKey: Enter
+- clickOn: "[placeholder='What needs to be done?']"
+- type: book a doctors appointment
+- pressKey: Enter
+- clickOn:
+    selector: $todo-item
+    index: 1
+    times: 2
+- assertExist:
+    selector: $todo-item .edit
+    index: 1
+    text: buy some cheese
+- type: buy some sausages
+- pressKey: Enter
+- assertVisible:
+    selector: $todo-title
+    index: 0
+    text: buy some cheese
+- assertVisible:
+    selector: $todo-title
+    index: 1
+    text: buy some sausages
+- assertVisible:
+    selector: $todo-title
+    index: 2
+    text: book a doctors appointment

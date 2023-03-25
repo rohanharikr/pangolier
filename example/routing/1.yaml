@@ -1,0 +1,28 @@
+test: should allow me to display active items
+---
+- loadUrl: https://demo.playwright.dev/todomvc
+- clickOn: "[placeholder='What needs to be done?']"
+- type: buy some cheese
+- pressKey: Enter
+- clickOn: "[placeholder='What needs to be done?']"
+- type: feed the cat
+- pressKey: Enter
+- clickOn: "[placeholder='What needs to be done?']"
+- type: book a doctors appointment
+- pressKey: Enter
+- clickOn:
+    selector: .todo-list li .toggle
+    index: 1
+- clickOn:
+    text: Active
+- assertExist:
+    selector: $todo-item
+    length: 2
+- assertVisible:
+    selector: $todo-item
+    index: 0
+    text: buy some cheese
+- assertVisible:
+    selector: $todo-item
+    index: 1
+    text: book a doctors appointment

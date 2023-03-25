@@ -1,0 +1,9 @@
+test: Should clear text input field when an item is added
+---
+- loadUrl: https://demo.playwright.dev/todomvc
+- clickOn: "[placeholder='What needs to be done?']"
+- type: buy some cheese
+- pressKey: Enter
+- assertExist:
+    selector: "[placeholder='What needs to be done?']"
+    value: ""

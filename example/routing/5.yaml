@@ -1,0 +1,25 @@
+test: should highlight the currently applied filter
+---
+- loadUrl: https://demo.playwright.dev/todomvc
+- clickOn: "[placeholder='What needs to be done?']"
+- type: buy some cheese
+- pressKey: Enter
+- clickOn: "[placeholder='What needs to be done?']"
+- type: feed the cat
+- pressKey: Enter
+- clickOn: "[placeholder='What needs to be done?']"
+- type: book a doctors appointment
+- pressKey: Enter
+- assertExist:
+    selector: .selected
+    text: All
+- clickOn: 
+    text: Active
+- assertExist:
+    selector: .selected
+    text: Active
+- clickOn: 
+    text: Completed
+- assertExist:
+    selector: .selected
+    text: Completed
