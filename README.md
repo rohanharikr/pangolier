@@ -59,12 +59,12 @@ Runs against all the `.yaml` files in the specified directory.
 
 ## Examples
 
-The todomvc example tests for Playwright have been re-written for Pangolier which you can find here. Note that some of the functionalities may be missing in the reimplementation.
+The [todomvc example tests for Playwright](https://github.com/microsoft/playwright/tree/main/examples/todomvc) have been re-written for Pangolier which you can find here. Note that some of the functionalities may be missing in the reimplementation.
 
 ## Roadmap
 The immediate goal of the project is to port all the features from Maestro to Pangolier.  
 Contributions welcome!
 
-<img src="./docs/assets/pango.png" alt="mr. pango" width="200px;"/>[^pango]
+<img src="./docs/assets/pango.png" alt="mr. pango" width="300px;"/>[^pango]
 [^pango]: Mr. Pango, the mascot for Pangolier; wielding his sword, the “Swashbuckle”.
 Artwork by Reddit user [TalonP](https://www.reddit.com/user/TalonP/).</small>
