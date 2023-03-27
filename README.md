@@ -66,7 +66,5 @@ The immediate goal of the project is to port all the features from Maestro to Pa
 Contributions welcome!
 
 <img src="./docs/assets/pango.png" alt="mr. pango" width="200px;"/>[^pango]
-<img src="./docs/assets/pango.png" alt="mr. pango" width="250px;"/>[^pango]
-<img src="./docs/assets/pango.png" alt="mr. pango" width="300px;"/>[^pango]
 [^pango]: Mr. Pango, the mascot for Pangolier; wielding his sword, the “Swashbuckle”.
 Artwork by Reddit user [TalonP](https://www.reddit.com/user/TalonP/).</small>
