@@ -1,0 +1,29 @@
+paths:
+  static: ''
+  uploads: uploads
+timezone: Europe/Lisbon
+markdown:
+  engine: kramdown
+  options:
+    heading_ids: false
+    gfm: false
+    breaks: false
+    typographer: false
+    attributes: true
+    attribute_elements:
+      inline: right
+      block: below
+      tr: none
+      td: none
+      li: right-of-prefix
+    treat_indentation_as_code: true
+_snippets_imports:
+  jekyll: true
+collections_config:
+  pages:
+    path: ''
+    icon: wysiwyg
+  docs:
+    path: docs
+    icon: docs
+    disable_url: true
