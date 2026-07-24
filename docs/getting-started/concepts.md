@@ -6,7 +6,7 @@ nav_order: 2
 ---
 # Concepts
 
-## Defining testsz
+## Defining tests
 
 `yaml test: Click on order online button --- - clickOn: $order-online-btn `
 
